@@ -148,11 +148,118 @@ public class Game {
      * @param grid 2D array of characters representing the game board
      * @return String indicating the outcome of the game: "X wins" or "O wins" or "Tie" or "None"
      */
-    public String checkGameWinner(char [][]grid){
+    public String checkGameWinner(char [][]grid) {
         String result = "None";
+
+
         //Student code goes here ...
-        return result;
+        int box = 0, row, column;
+        int gridLength = grid.length;
+
+        // for X wins
+
+
+        if (grid[0][0] == 'x' && grid[0][1] == 'x' && grid[0][2] == 'x') {
+            result = "x wins";
+        }
+        else if(grid[1][0] == 'x' && grid[1][1] == 'x' && grid[1][2] == 'x')
+        {
+            result = "x wins";
+        }
+
+        else if(grid[2][0] == 'x' && grid[2][1] == 'x' && grid[2][2] == 'x')
+        {
+            result = "x wins";
+        }
+        else if(grid[0][0] == 'x' && grid[1][0] == 'x' && grid[2][0] == 'x')
+        {
+            result = "x wins";
+        }
+         else if(grid[0][1] == 'x' && grid[1][1] == 'x' && grid[2][1] == 'x')
+        {
+            result = "x wins";
+        }
+         else if(grid[0][2] == 'x' && grid[1][2] == 'x' && grid[2][2] == 'x')
+        {
+            result = "x wins";
+        }
+        else if(grid[0][0] == 'x' && grid[1][1] == 'x' && grid[2][2] == 'x')
+        {
+            result = "x wins";
+        }
+         else if(grid[0][2] == 'x' && grid[1][1] == 'x' && grid[2][0] == 'x')
+        {
+            result = "x wins";
+        }
+
+
+        //for O wins
+
+         else if (grid[0][0] == 'o' && grid[0][1] == 'o' && grid[0][2] == 'o')
+        {
+            result = "o wins";
+        }
+         else if(grid[1][0] == 'o' && grid[1][1] == 'o' && grid[1][2] == 'o')
+        {
+            result = "o wins";
+        }
+
+        else if(grid[2][0] == 'o' && grid[2][1] == 'o' && grid[2][2] == 'o')
+        {
+            result = "o wins";
+        }
+        else if(grid[0][0] == 'o' && grid[1][0] == 'o' && grid[2][0] == 'o')
+        {
+            result = "o wins";
+        }
+        else if(grid[0][1] == 'o' && grid[1][1] == 'o' && grid[2][1] == 'o')
+        {
+            result = "O wins";
+        }
+         else if(grid[0][2] == 'o' && grid[1][2] == 'o' && grid[2][2] == 'o')
+        {
+            result = "o wins";
+        }
+        else if(grid[0][0] == 'o' && grid[1][1] == 'o' && grid[2][2] == 'o')
+        {
+            result = "o wins";
+        }
+         else if(grid[0][2] == 'o' && grid[1][1] == 'o' && grid[2][0] == 'o')
+        {
+            result = "o wins";
+        }
+
+
+        // for tie
+
+       else
+        {
+
+            for (row = 0; row < gridLength; row++) {
+                for (column = 0; column < gridLength; column++) {
+                    if (grid[row][column] != '-') {
+                        box = box + 1;
+                    }
+                }
+            }
+
+            if (box == gridLength * gridLength) {
+                result = "Tie";
+            }
+
+
+        }
+       return result;
     }
+
+
+
+
+
+
+
+
+
 
     /**
      * Main function
